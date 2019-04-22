@@ -7,6 +7,10 @@ namespace ContractBroker
     {
         Task<Contract> GetLatestConsumerContract(string consumerKey);
 
+        Task<Contract> GetLatestProducerContract(string producerKey);
+
         Task PublishConsumerContract(string consumerKey, string contractJson);
+
+        Task PublishProducerContract(string producerKey, string contractJson);
     }
 }

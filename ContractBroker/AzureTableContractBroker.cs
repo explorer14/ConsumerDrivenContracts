@@ -33,6 +33,11 @@ namespace ContractBroker
             };
         }
 
+        public Task<Contract> GetLatestProducerContract(string producerKey)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task PublishConsumerContract(
             string consumerKey, string contractJson)
         {
@@ -44,6 +49,11 @@ namespace ContractBroker
                     PartitionKey = consumerKey,
                     RowKey = Guid.NewGuid().ToString()
                 });
+        }
+
+        public Task PublishProducerContract(string producerKey, string contractJson)
+        {
+            throw new NotImplementedException();
         }
     }
 

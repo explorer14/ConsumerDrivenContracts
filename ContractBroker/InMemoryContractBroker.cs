@@ -6,7 +6,8 @@ namespace ContractBroker
 {
     public class InMemoryContractBroker : IContractBroker
     {
-        private Dictionary<string, Contract> consumerContracts = new Dictionary<string, Contract>()
+        private Dictionary<string, Contract> consumerContracts = 
+            new Dictionary<string, Contract>()
         {
             {
                 "consumer-api-1",
@@ -31,6 +32,11 @@ namespace ContractBroker
             throw new System.NotImplementedException();
         }
 
+        public Task<Contract> GetLatestProducerContract(string producerKey)
+        {
+            throw new NotImplementedException();
+        }
+
         public Task PublishConsumerContract(string consumerKey, string contractJson)
         {
             consumerContracts.Add(consumerKey,
@@ -41,6 +47,11 @@ namespace ContractBroker
                 });
 
             return Task.CompletedTask;
+        }
+
+        public Task PublishProducerContract(string producerKey, string contractJson)
+        {
+            throw new NotImplementedException();
         }
     }
 }
